@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="dk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test din Viden</title>
+    <style>
+
+        .container {
+            border: 3px ;
+            border-radius: 10px;
+            width: 60%;
+            padding: 20px;
+            display: none;
+            background-color: rgba(213,41,65,0.82);
+            font-family: sans-serif;
+            color: rgba(244,244,246,0.82);
+        }
+
+        button {
+            margin-top: 10px;
+            color: rgba(244,244,246,0.82);
+            background-color:rgba(155,196,203,0.82);
+            border: none;
+            font-size: medium;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    Test din Viden Om forsvundende personer her!
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="next" onclick="next(1)">Tag Testen</button>
+</div>
+<div class="container">
+    Hvor mange personer forsvinder hvert år? <br>
+
+    <input type="radio" name="question1">ca.50 personer<br>
+    <input type="radio" name="question1">ca.200 personer<br>
+    <input type="radio" name="question1">ca.450 personer<br>
+    <input type="radio" name="question1" id="correct1">ca.600 personer<br>
+    <button class="next" onclick="next(2)">næste</button>
+</div>
+
+<div class="container">
+    Hvad kan forsvindingerne skyldes?<br>
+    <input type="radio" name="question2" >at folk gemmer sig<br>
+    <input type="radio" name="question2">folk der tager på uanmeldt ferie<br>
+    <input type="radio" name="question2" id="correct2">demens, mentalt helbred, alkohol problemer, krimminel aktivitet<br>
+    <button class="next" onclick="next(3)">næste</button>
+</div>
+
+<div class="container">
+    Hvad koster det at støtte missing people?<br>
+    <input type="radio" name="question3" >25 kr om måneden<br>
+    <input type="radio" name="question3" id="correct3">100 kr om året<br>
+    <input type="radio" name="question3">100 kr om måneden<br>
+    <input type="radio" name="question3">500 kr om året<br>
+    <button class="next" onclick="next(4)">næste</button>
+</div>
+
+<div class="container">
+    Hvilken af disse støtter Missing People?<br>
+    <input type="radio" name="question4"id="correct4">OK Benzin, Med Ok Benzin kort støtter man automatisk missing people ved at tanke.<br>
+    <input type="radio" name="question4">haribo, for hver click mix solgt støtter man missing people<br>
+    <input type="radio" name="question4">jysk, hver gang man køber for 500 kr hos jysk går en 10'er til missing people<br>
+    <button class="next" onclick="next(5)">næste</button>
+</div>
+<div class="container">
+    Hvad koster det at være frivillig søger?<br>
+    <input type="radio" name="question5"id="correct5" >0 Kr din støtte er betaling nok.<br>
+    <input type="radio" name="question5">100 kr ligesom stanard medlemskab.<br>
+    <input type="radio" name="question5">50 kr<br>
+    <input type="radio" name="question5">300 kr<br>
+    <button class="next" onclick="next(6)">næste</button>
+</div>
+
+<div class="container">
+    hvad koster det at efterlyse en savnet?<br>
+    <input type="radio" name="question6" >5 kr<br>
+    <input type="radio" name="question6">25 kr<br>
+    <input type="radio" name="question6">50 kr<br>
+    <input type="radio" name="question6" id="correct6">0 kr<br>
+    <button onclick="result()">svar</button>
+</div>
+
+<script>
+
+    document.getElementsByClassName('container')[0].style.display = "block";
+
+
+    function next(id) {
+        document.getElementsByClassName('container')[id-1].style.display = "none";
+        document.getElementsByClassName('container')[id].style.display = "block";
+    }
+
+
+    function result() {
+        var score = 0;
+        if (document.getElementById('correct1').checked) {
+            score++;
+        }
+        if (document.getElementById('correct2').checked) {
+            score++;
+        }
+        if (document.getElementById('correct3').checked) {
+            score++;
+        }
+
+    if (document.getElementById('correct4').checked) {
+        score++;
+    }
+
+        if (document.getElementById('correct5').checked) {
+            score++;
+        }
+
+        if (document.getElementById('correct6').checked) {
+            score++;
+        }
+        alert("du fik: "+ score + "/6" );
+        alert("1:omkring 600 personer forsvinder hvert år.\n" +
+            "2:grunde til at folk forsvinder er alt fra alkohol problemer, demens, psykiske lidelser til krimminel adfærd.\n" +
+            "3:man kan støtte missing people med helt ned til 100 kr om året.\n"+
+            "4:ok benzin støtter missing people hver gang du tanker med et ok benzin kort.\n" +
+            "5:det koster ikke noget at være frivillig søger.\n" +
+            "6:det koster ikke noget at mælde nogen savnet.\n" +
+            "Du ka' også gøre en forskel i dag! for mere info tjek siden her ud" )
+    }
+
+</script>
+</body>
+</html>
+
+
+
+</body>
+</html>
